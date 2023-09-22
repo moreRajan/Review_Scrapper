@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request,jsonify
 from flask_cors import CORS,cross_origin
 import requests
@@ -5,6 +6,7 @@ from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 import logging
 logging.basicConfig(filename="scrapper.log" , level=logging.INFO)
+import pymongo
 
 app = Flask(__name__)
 
@@ -72,6 +74,27 @@ def index():
                           "Comment": custComment}
                 reviews.append(mydict)
             logging.info("log my final result {}".format(reviews))
+            
+            from pymongo.mongo_client import MongoClient
+
+            uri = "mongodb+srv://morerajan32:Rajan%4032@cluster0.rvewfwa.mongodb.net/?retryWrites=true&w=majority"
+
+            # Create a new client and connect to the server
+            client = MongoClient(uri)
+            db=client['review_scrap']
+            review_col=db['review_scrap_data']
+            review_col.insert_many(reviews)
+            
+
+
+           
+
+            
+
+
+
+
+
             return render_template('result.html', reviews=reviews[0:(len(reviews)-1)])
         except Exception as e:
             logging.info(e)
