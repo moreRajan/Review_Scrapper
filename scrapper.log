@@ -5551,3 +5551,8 @@ INFO:root:log my final result [{'Product': 'asus', 'Name': 'patra', 'Rating': '5
 INFO:werkzeug:172.18.0.2 - - [22/Sep/2023 22:49:34] "POST /review HTTP/1.1" 200 -
 INFO:werkzeug:172.18.0.2 - - [22/Sep/2023 22:49:34] "[33mGET /style.css HTTP/1.1[0m" 404 -
 INFO:werkzeug:172.18.0.2 - - [22/Sep/2023 22:49:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:172.18.0.45 - - [26/Sep/2023 22:23:55] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:172.18.0.45 - - [26/Sep/2023 22:23:55] "[37mGET /static/css/main.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:172.18.0.45 - - [26/Sep/2023 22:23:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:172.18.0.45 - - [26/Sep/2023 22:23:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
